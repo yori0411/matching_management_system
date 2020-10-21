@@ -5,11 +5,11 @@ class AuthController < ApplicationController
   end
 
   def add_session
-    admin = User.find_by(user_id: params[:user][:user_id])
-    if admin && admin.authenticate(params[:user][:password])
+    login_user = User.find_by(user_id: params[:administrator][:user_id])
+    if login_user && login_user.authenticate(params[:administrator][:password])
+      session[:login_user] = login_user
       flash[:notice] = 'ログインしました'
-      session[:admin_id] = admin.user_id
-      redirect_to action: :top
+      redirect_to  controller: :home, action: :top
     else
       redirect_to action: :login
     end

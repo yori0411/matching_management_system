@@ -19,6 +19,12 @@ ActiveRecord::Schema.define(version: 20201016060150) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "texts", force: :cascade do |t|
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.integer "password_digest"
     t.string "name"
