@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>ログインID:</strong>
+  <%= @user.user_id %>
+</p>
+
+
+<p>
   <strong>パスワード:</strong>
   <%= @user.password %>
 </p>
@@ -20,10 +26,6 @@
   <%= @user.filename %>
 </p>
 
-<p>
-  <strong>ログインID:</strong>
-  <%= @user.user_id %>
-</p>
 
 <p>
   <strong>権限:</strong>

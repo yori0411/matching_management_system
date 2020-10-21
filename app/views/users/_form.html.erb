@@ -12,8 +12,19 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :ログインID %>
+    <%= form.text_field :user_id, id: :user_user_id %>
+  </div>
+
+
+  <div class="field">
     <%= form.label :パスワード %>
     <%= form.number_field :password, id: :user_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :パスワード確認 %>
+    <%= form.number_field :password_confirmation, id: :user_password_confirmation %>
   </div>
 
   <div class="field">
@@ -27,10 +38,6 @@
   </div>
 
 
-  <div class="field">
-    <%= form.label :ログインID %>
-    <%= form.text_field :user_id, id: :user_user_id %>
-  </div>
 
   <div class="field">
     <%= form.label :権限 %>

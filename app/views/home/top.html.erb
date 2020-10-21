@@ -1,0 +1,13 @@
+<h1>マッチング</h1>
+<p>チャット</p>
+
+<ul id="chat-index">
+  <% @text.each do |message| %>
+  <li><%= message.text %></li>
+  <% end %>
+</ul>
+<%= form_tag("/home/create") do %>
+  <input id="chat-form" type="text" data-behavior="chat_post" name="message" value="入力">
+<% end %>
+
+
