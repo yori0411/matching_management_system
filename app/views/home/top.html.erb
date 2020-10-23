@@ -1,13 +1,6 @@
-<h1>マッチング</h1>
-<p>チャット</p>
+<h1>ｍａｔｃｈｉｎｇ</h1>
+<p>友達一覧</p>
 
-<ul id="chat-index">
-  <% @text.each do |message| %>
-  <li><%= message.text %></li>
-  <% end %>
-</ul>
-<%= form_tag("/home/create") do %>
-  <input id="chat-form" type="text" data-behavior="chat_post" name="message" value="入力">
-<% end %>
+<a href = 'http://localhost:3000/rooms/show'>チャット</>
 
 

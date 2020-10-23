@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+ 
+  get 'rooms/show'
+
   #get 'home/top'
   get'/', to: 'home#top'
-  post '/home/create', to: 'home#create'
+  post '/rooms/create' #, to: 'rooms#create'
   resources :users
   namespace :auth do
     post 'add_session'

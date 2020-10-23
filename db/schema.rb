@@ -10,20 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20201014034117) do
-
-  create_table "texts", force: :cascade do |t|
-    t.text "text"
-=======
-ActiveRecord::Schema.define(version: 20201014032225) do
+ActiveRecord::Schema.define(version: 20201019031125) do
 
   create_table "administrators", force: :cascade do |t|
     t.string "user_id"
     t.string "password_digest"
->>>>>>> 0fdba69e8d6c121ffee0eb932bdb61bd75beb2e6
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "texts", force: :cascade do |t|
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "user_id"
+    t.string "partner_id"
   end
 
   create_table "users", force: :cascade do |t|
