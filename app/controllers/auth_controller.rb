@@ -5,8 +5,8 @@ class AuthController < ApplicationController
   end
 
   def add_session
-    login_user = User.find_by(user_id: params[:administrator][:user_id])
-    if login_user && login_user.authenticate(params[:administrator][:password])
+    login_user = User.find_by(user_id: params[:user][:user_id])
+    if login_user && login_user.authenticate(params[:user][:password])
       session[:login_user] = login_user
       flash[:notice] = 'ログインしました'
       redirect_to  controller: :home, action: :top
