@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     post 'add_session'
     delete 'logout'
   end
-  get '/' => 'auth#login'
+  get '/login' => 'auth#login'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

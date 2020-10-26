@@ -12,94 +12,38 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :password %>
+    <%= form.label :ログインID %>
+    <%= form.text_field :user_id, id: :user_user_id %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :パスワード %>
     <%= form.number_field :password, id: :user_password %>
   </div>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :パスワード確認 %>
+    <%= form.number_field :password_confirmation, id: :user_password_confirmation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :名前 %>
     <%= form.text_field :name, id: :user_name %>
   </div>
 
   <div class="field">
-    <%= form.label :gender %>
+    <%= form.label :性別 %>
     <%= form.number_field :gender, id: :user_gender %>
   </div>
 
-  <div class="field">
-    <%= form.label :filename %>
-    <%= form.text_field :filename, id: :user_filename %>
-  </div>
+
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :user_user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :authority %>
+    <%= form.label :権限 %>
     <%= form.number_field :authority, id: :user_authority %>
   </div>
 
-  <div class="field">
-    <%= form.label :q1 %>
-    <%= form.number_field :q1, id: :user_q1 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :q2 %>
-    <%= form.number_field :q2, id: :user_q2 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :q3 %>
-    <%= form.number_field :q3, id: :user_q3 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :q4 %>
-    <%= form.number_field :q4, id: :user_q4 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :q5 %>
-    <%= form.number_field :q5, id: :user_q5 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :q6 %>
-    <%= form.number_field :q6, id: :user_q6 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :q7 %>
-    <%= form.number_field :q7, id: :user_q7 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :q8 %>
-    <%= form.number_field :q8, id: :user_q8 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :q9 %>
-    <%= form.number_field :q9, id: :user_q9 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :q10 %>
-    <%= form.number_field :q10, id: :user_q10 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :q11 %>
-    <%= form.number_field :q11, id: :user_q11 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :q12 %>
-    <%= form.number_field :q12, id: :user_q12 %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>
