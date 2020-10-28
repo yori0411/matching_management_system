@@ -1,12 +1,13 @@
 class AuthController < ApplicationController
-    before_action :create_form
+  before_action :create_form
 
   def login
   end
 
   def add_session
     login_user = User.find_by(user_id: params[:user][:user_id])
-    if login_user && login_user.authenticate(params[:user][:password])
+    # if login_user && login_user.authenticate(params[:user][:password])
+    if login_user && (login_user.password == params[:user][:password])
       session[:login_user] = login_user
       flash[:notice] = 'ログインしました'
       redirect_to  controller: :home, action: :top
@@ -20,10 +21,10 @@ class AuthController < ApplicationController
     flash[:notice] = 'ログアウトしました'
     redirect_to action: :login
   end
-  
+
   private
-  
+
   def create_form
-    @form = Administrator.new
+    @form = User.new
   end
 end

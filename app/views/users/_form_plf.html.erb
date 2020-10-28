@@ -11,7 +11,15 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :名前 %>
+    <%= form.text_field :name, id: :user_name %>
+  </div>
 
+  <div class="field">
+   <%= form.label :性別 %>
+   <%= form.number_field :gender, id: :user_gender %>
+  </div>
 
   <div class="field">
     <%= form.label :filename %>
