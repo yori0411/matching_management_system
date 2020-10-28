@@ -1,13 +1,6 @@
 <h1>友達一覧</h1>
 <h1>プロフィール一覧</h1>
 
-<ul id="chat-index">
-  <% @text.each do |message| %>
-  <li><%= message.text %></li>
-  <% end %>
-</ul>
-<%= form_tag("/home/create") do %>
-  <input id="chat-form" type="text" data-behavior="chat_post" name="message" value="入力">
-<% end %>
+<a href = 'http://localhost:3000/rooms/show'>チャット</>
 
 
