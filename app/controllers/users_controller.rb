@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit_plf
-    @user = User.where()
+    @user = User.where("password='1234'","name='test'","gender='0'","user_id='bbbb'","authority='0'")
   end
 
   # POST /users
