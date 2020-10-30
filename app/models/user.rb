@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-    # has_secure_password
+    has_many :texts, primary_key: 'user_id', foreign_key: 'user_id'
 end
