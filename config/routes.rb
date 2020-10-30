@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'rooms/show'
 
   #get 'home/top'
-  get'/', to: 'home#top'
+  root 'home#top'
   post '/rooms/create' #, to: 'rooms#create'
   resources :users
   namespace :auth do
