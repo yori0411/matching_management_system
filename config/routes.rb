@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :rooms
 
   #get 'home/top'
-  get'/', to: 'home#top'
-  post '/rooms/create_text' #, to: 'rooms#create'
+  root 'home#top'
+  post '/rooms/create' #, to: 'rooms#create'
   resources :users
   namespace :auth do
     post 'add_session'
@@ -13,4 +13,9 @@ Rails.application.routes.draw do
   end
   get '/login' => 'auth#login'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get '/plf' => 'users#edit_plf'
+
+  get '/matching' => 'users#matching'
+
 end
