@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>ルーム一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>マイID</th>
+      <th>パートナーID</th>
+      <th>ルームID</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.id %></td>
+        <td><%= room.user_id2 %></td>
+        <td><%= link_to '詳細', room %></td>
+        <td><%= link_to '編集', edit_room_path(room) %></td>
+        <td><%= link_to '削除', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規登録', new_room_path %>
+<%= link_to 'ログアウト', :auth_logout, method: :delete %>
