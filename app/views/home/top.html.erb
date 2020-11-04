@@ -6,13 +6,8 @@
 
 <p> <%= link_to 'プロフィール編集','/plf' %> <p>
 
-<% @users.each do |user| %>
-  <tr> 
-    <td><%= user.title %>
-        <% if user.filename.present? %>
-         <br>
-         <%= image_tag user.filename %>
-        <% end %>
-    </td>
-  </tr>
-<% end %>
+<%# プロフィールに自分の情報を追加 %>
+
+<%= @user.name %>
+<br/>
+<%= @user.filename %>

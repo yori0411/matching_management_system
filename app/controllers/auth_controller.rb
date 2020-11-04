@@ -8,7 +8,7 @@ class AuthController < ApplicationController
     login_user = User.find_by(user_id: params[:user][:user_id])
     # if login_user && login_user.authenticate(params[:user][:password])
     if login_user && (login_user.password == params[:user][:password])
-      session[:login_user] = login_user
+      session[:login_id] = login_user.user_id
       flash[:notice] = 'ログインしました'
       redirect_to  controller: :home, action: :top
     else
