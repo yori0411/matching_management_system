@@ -29,6 +29,15 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit_plf
     @user = User.find_by(password: "1234", name: "test", gender: 0, user_id: "bbbb", authority: 0)
+    #画像を指定した場合
+    if params[:user][:filename].present?
+      @user.filename = params[:user][:filename]/original_filename
+    
+      File.open("#{@book.filename}",'w+b') {|f|
+       f.write(params[:user][:filename].read)
+      }
+    end
+    
   end
 
   # POST /users
@@ -40,6 +49,20 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
+        format.html { render :new }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  #プロフィールもいる？
+  def create_plf
+    @user = User.new(user_params)
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.json { render :show, status: :created, location: @user }
+       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
  
-  get 'rooms/show'
+  #get 'rooms/show'
+  resources :rooms
 
   #get 'home/top'
   root 'home#top'
