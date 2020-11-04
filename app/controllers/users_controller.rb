@@ -47,17 +47,29 @@ class UsersController < ApplicationController
   end
 
   #プロフィールもいる？
-  def create
+  def create_plf
     @user = User.new(user_params)
+    #画像を指定した場合
+    if params[:user][:filename].present?
+      @user.filename = params[:user][:filename].original_filename
+      
+      File.open("#{@user.filename}",'w+b') {|f|
+      f.write(params[:user][:filename].read)
+      }
+    end
+    
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
-      else
+       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+
+  
   end
 
   # PATCH/PUT /users/1
@@ -67,7 +79,7 @@ class UsersController < ApplicationController
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
-      else
+       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -77,15 +89,27 @@ class UsersController < ApplicationController
     # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update_plf
+    #画像を指定した場合
+    if params[:user][:filename].present?
+      filename = params[:user][:filename].original_filename
+      
+      File.open("#{filename}",'w+b') {|f|
+        f.write(params[:user][:filename].read)
+      }
+      params[:user][:filename] = filename
+    end
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
-      else
+       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+
+
+
   end
 
   # DELETE /users/1
