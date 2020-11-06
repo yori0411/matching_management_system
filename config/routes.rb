@@ -2,10 +2,11 @@ Rails.application.routes.draw do
  
   #get 'rooms/show'
   resources :rooms
+ 
 
   #get 'home/top'
   root 'home#top'
-  post '/rooms/create' #, to: 'rooms#create'
+  post '/rooms/create_text' #, to: 'rooms#create'
   resources :users
   namespace :auth do
     post 'add_session'
