@@ -6,5 +6,9 @@
 
 <p> <%= link_to 'プロフィール編集','/plf' %> <p>
 
-
-<%= session[:login_user] %>
+<%# プロフィールに自分の情報を追加 %>
+<div class="a">
+<%= @user.filename %>
+  <br/>
+  <%= @user.name %>
+</div>
