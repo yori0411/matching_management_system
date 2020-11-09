@@ -13,30 +13,54 @@
  *= require_tree .
  *= require_self
  */
+
+ /*友達一覧*/
  h3 {    position: relative;
-    top: 15px;
+    top: 10px;
     left: 100px;
     font-size: 40px ;
  }
 
+ /*プロフィール*/
  h2 {    position: relative;
-    top: 15px;
-    left: 1020px;
+    top: -40px;
+    left: 900px;
     font-size: 40px ;
  }
 
+ .filename {
+    top: 50px;
+    left: 900px;
+}
+
+.name {
+    top: 300px;
+    left: 900px;
+}
+
+ /*＋マッチングのところ*/
  h4 {    position: relative;
     top: 550px;
     left: 100px;
     font-size: 40px ;
  }
 
+ /*プロフィール編集ボタン*/
  p {    position: relative;
     top: 460px;
-    left: 1000px;
+    left: 900px;
     font-size: 40px ;
  }
 
  body {
-     background-color: #CCCCCC;
+    background:linear-gradient(90deg,#ffc0cb 0%,#ffc0cb 40%,#f0f8ff 40%,#f0f8ff 100%);
+    /*background-color: #CCCCCC;*/
+    top: 570px;
+    left: 1030px;
  }
+
+ .a {    position: relative;
+   top: 100px;
+   left: 1060px;
+ }
+ 
