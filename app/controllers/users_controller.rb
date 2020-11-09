@@ -57,7 +57,6 @@ class UsersController < ApplicationController
       f.write(params[:user][:filename].read)
       }
     end
-    
 
     respond_to do |format|
       if @user.save
@@ -68,8 +67,6 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-
-  
   end
 
   # PATCH/PUT /users/1
@@ -107,9 +104,10 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
 
-
-
+  def matching
+    @users = User.all
   end
 
   # DELETE /users/1
