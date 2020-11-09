@@ -2,12 +2,14 @@
 
 <h2>プロフィール</h2>
 
+<h1>
+  <%# プロフィールに自分の情報を追加 %>
+  <br/>
+  <%= @user.name %>
+  <br/>
+  <%= @user.filename %>
+</h1>
+
 <h4> <%= link_to '+マッチング','/matching' %> </h4>
 
-<p> <%= link_to 'プロフィール編集','/plf' %> <p>
-
-<%# プロフィールに自分の情報を追加 %>
-
-<%= @user.name %>
-<br/>
-<%= @user.filename %>
+<p> <%= link_to 'プロフィール編集','/plf' %> </p>

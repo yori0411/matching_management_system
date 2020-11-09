@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show_plf
+    @user = User.find_by(password: "1234", name: "test", gender: 0, user_id: "bbbb", authority: 0)
   end
 
   # GET /users/1/edit
@@ -46,35 +47,20 @@ class UsersController < ApplicationController
     end
   end
 
-  #プロフィールもいる？
-  def create_plf
-    @user = User.new(user_params)
-    #画像を指定した場合
-    if params[:user][:filename].present?
-      @user.filename = params[:user][:filename].original_filename
-      
-      File.open("#{@user.filename}",'w+b') {|f|
-      f.write(params[:user][:filename].read)
-      }
-    end
-    
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-       else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-
-  
-  end
-
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    #画像を指定した場合
+    if params[:user][:filename].present?
+      filename = params[:user][:filename].original_filename
+          
+      File.open("#{filename}",'w+b') {|f|
+       f.write(params[:user][:filename].read)
+      }
+
+      params[:user][:filename] = filename
+    end
+    
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -85,6 +71,29 @@ class UsersController < ApplicationController
       end
     end
   end
+
+    #プロフィールもいる？
+    def create_plf
+      @user = User.new(user_params)
+      #画像を指定した場合
+      if params[:user][:filename].present?
+        @user.filename = params[:user][:filename].original_filename
+        
+        File.open("#{@user.filename}",'w+b') {|f|
+        f.write(params[:user][:filename].read)
+        }
+      end
+  
+      respond_to do |format|
+        if @user.save
+          format.html { redirect_to @user, notice: 'User was successfully created.' }
+          format.json { render :show, status: :created, location: @user }
+         else
+          format.html { render :new }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
+      end
+    end
 
     # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
@@ -98,6 +107,8 @@ class UsersController < ApplicationController
       }
       params[:user][:filename] = filename
     end
+    logger.debug("===============")
+    logger.debug(user_params.inspect)
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
