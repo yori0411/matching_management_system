@@ -1,16 +1,18 @@
 class RoomsController < ApplicationController
-  before_action :set_room, only: [:show, :edit, :update, :destroy]
+  before_action :set_room, only: [:show, :edit, :create_text, :update, :destroy]
 
   def show
-    @texts = Text.all
+    #@room = Room.find(params[:id])
+    @texts = Text.where(room_id: @room.room_id)
   end
 
   def create_text
-    @texts = Text.new(text: params[:message], user_id: "s20181435", partner_id: "s20181436")
-    #logger.debug("=================")
-    #logger.debug(@texts.inspect)
-    @texts.save
-    redirect_to '/rooms/show'
+    #@room = Room.find(params[:id])
+    @text = Text.new(text: params[:message], room_id: @room.room_id)
+    logger.debug("=================")
+    logger.debug(@text.inspect)
+    @text.save
+    redirect_to @room
   end
 
   def index
@@ -18,7 +20,7 @@ class RoomsController < ApplicationController
   end
 
   def new
-    @rooms = Room.new
+    @room = Room.new
   end
 
   def edit
@@ -28,7 +30,7 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
     respond_to do |format|
       if @room.save
-        format.html { redirect_to :index, notice: 'Room was successfully created.' }
+        format.html { redirect_to @room, notice: 'Room was successfully created.' }
         format.json { render :show, status: :created, location: @room }
       else
         format.html { render :new }

@@ -5,18 +5,18 @@
 <table>
   <thead>
     <tr>
-      <th>マイID</th>
       <th>パートナーID</th>
       <th>ルームID</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @rooms.each do |room| %>
       <tr>
-        <td><%= room.id %></td>
         <td><%= room.user_id2 %></td>
-        <td><%= link_to '詳細', room %></td>
+        <td><%= room.room_id %></td>
+        <td><%= link_to 'チャット', room_path(room) %></td>
         <td><%= link_to '編集', edit_room_path(room) %></td>
         <td><%= link_to '削除', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
