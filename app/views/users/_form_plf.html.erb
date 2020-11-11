@@ -85,7 +85,7 @@
     <%= form.label :Ｑ12，あなたの趣味は？0が読書、1がアニメ、2が映画、3がドラマ、4が音楽、5がスポーツ、6が料理、7が釣り、8がYoutube・ティックトック、9がゲーム、10が旅行です。 %>
     <%= form.number_field :q12, id: :user_q12 %>
   </div>
-
+  <%= hidden_field_tag :student_plf, true %>
   <div class="actions">
     <%= form.submit %>
   </div>
