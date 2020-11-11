@@ -1,6 +1,7 @@
 <h1>マッチングした人一覧</h1>
 
 <% @users.each do |user| %>
+  <div class="matchinglist">
   <%= user.name %>
   <br/>
   <%= user.filename %>
