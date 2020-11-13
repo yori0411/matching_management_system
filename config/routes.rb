@@ -19,6 +19,6 @@ Rails.application.routes.draw do
 
   get '/matching' => 'users#matching'
 
-
+  get '/details' => 'users#details'
 
 end
