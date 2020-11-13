@@ -1,14 +1,14 @@
 class RoomsController < ApplicationController
-  before_action :set_room, only: [:show, :edit, :create_text, :update, :destroy]
+  before_action :set_room, only: [:show, :edit, :update, :destroy]
 
   def show
     #@room = Room.find(params[:id])
-    @texts = Text.where(room_id: @room.room_id)
+    @texts = Text.where(room_id: @room.id)
   end
 
   def create_text
-    #@room = Room.find(params[:id])
-    @text = Text.new(text: params[:message], room_id: @room.room_id)
+    @room = Room.find(params[:id])
+    @text = Text.new(text: params[:message], room_id: @room.id)
     logger.debug("=================")
     logger.debug(@text.inspect)
     @text.save
@@ -43,7 +43,7 @@ class RoomsController < ApplicationController
     respond_to do |format|
       if @room.update(user_params)
         format.html { redirect_to :index, notice: 'Room was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        format.json { render :show, status: :ok, location: @room }
       else
         format.html { render :edit }
         format.json { render json: @room.errors, status: :unprocessable_entity }
