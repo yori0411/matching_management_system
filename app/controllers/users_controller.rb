@@ -36,15 +36,8 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    #画像を指定した場合
-    if params[:user][:filename].present?
-     @user.filename = params[:user][:filename].original_filename
-            
-      File.open("#{@user.filename}",'w+b') {|f|
-      f.write(params[:user][:filename].read)
-      }
-    end
-    
+
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -59,19 +52,18 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @user.attributes = user_params
     #画像を指定した場合
     if params[:user][:filename].present?
-      filename = params[:user][:filename].original_filename
-          
-      File.open("#{filename}",'w+b') {|f|
+      @user.filename = DateTime.now.strftime('%Y%m%d%H%M%S') + params[:user][:filename].original_filename
+
+      File.open("app/assets/images/#{@user.filename}",'w+b') {|f|
        f.write(params[:user][:filename].read)
       }
     end
 
-    params[:user][:filename] = filename
-    
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.save(user_params)
         if params[:student_plf]
           #生徒用のプロフィール編集完了
           format.html { redirect_to controller: 'home', action: 'top', notice: 'User was successfully updated.' }
@@ -94,15 +86,15 @@ class UsersController < ApplicationController
   #プロフィールもいる？
   def create_plf
     @user = User.new(user_params)
-    #画像を指定した場合
-    if params[:user][:filename].present?
-      @user.filename = params[:user][:filename].original_filename
-        
-      File.open("#{@user.filename}",'w+b') {|f|
-      f.write(params[:user][:filename].read)
-      }
-    end
-  
+     #画像を指定した場合
+     if params[:user][:filename].present?
+      @user.filename = DateTime.now.strftime('%Y%m%d%H%M%S') + params[:user][:filename].original_filename
+ 
+       File.open("app/assets/images/#{@user.filename}",'w+b') {|f|
+       f.write(params[:user][:filename].read)
+       }
+     end
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -117,15 +109,15 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update_plf
+    @user.attributes  = user_params
     #画像を指定した場合
     if params[:user][:filename].present?
-      filename = params[:user][:filename].original_filename
-      
-      File.open("#{filename}",'w+b') {|f|
-        f.write(params[:user][:filename].read)
-      }
-      params[:user][:filename] = filename
-    end
+      @user.filename = DateTime.now.strftime('%Y%m%d%H%M%S') + params[:user][:filename].original_filename
+ 
+       File.open("app/assets/images/#{@user.filename}",'w+b') {|f|
+       f.write(params[:user][:filename].read)
+       }
+     end
     logger.debug("===============")
     logger.debug(user_params.inspect)
     respond_to do |format|

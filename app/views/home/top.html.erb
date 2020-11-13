@@ -2,7 +2,15 @@
 
 <h2>プロフィール</h2>
 
+<h2 class="filename">
+<% if @user.filename.present? %>
+  <%= image_tag @user.filename %>
+<% end %>
+</h2>
 
+<h2 class="name">
+  <%= @user.name %>
+</h2>
 
 <h4> <%= link_to '+マッチング','/matching' %> </h4>
 
