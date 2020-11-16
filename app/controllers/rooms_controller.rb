@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
   end
 
   def index
-    @rooms = Room.all
+    @rooms = Room.where(user_id1: session[:login_id]).or(Room.where(user_id2: session[:login_id]))
   end
 
   def new
