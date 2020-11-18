@@ -118,10 +118,9 @@ class UsersController < ApplicationController
        f.write(params[:user][:filename].read)
        }
      end
-    logger.debug("===============")
-    logger.debug(user_params.inspect)
+
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.save
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
        else
