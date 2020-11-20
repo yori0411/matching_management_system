@@ -1,9 +1,15 @@
 <h1>チャット</h1>
-<ul id="chat-index">
+
+<ul>
   <% @texts.each do |message| %>
-  <li><%= message.text %></li>
+    <% if message.user_id == @login_id %>
+      <li class="mymessage"><%= message.text %></li>
+    <% else %>
+      <li class="youmessage"><%= message.text %></li>
+    <% end %>
   <% end %>
-</ul>
+<ul>
+
 <%= form_tag("/rooms/create_text") do %>
     <input id="chat-form" type="text" data-behavior="chat_post" name="message" value="入力">
     <%= hidden_field_tag :id, @room.id %>
@@ -13,17 +19,3 @@
 <%= link_to '戻る', root_path %>
 
 
-<dl class="faq_area">
-  <div>
-    <dt>質問の内容が入ります。</dt>
-    <dd>質問に対する答えの文章が入ります。</dd>
-  </div>
-  <div>
-    <dt>質問の内容の文章が入ります。</dt>
-    <dd>その答えの文章が入ります。</dd>
-  </div>
-  <div>
-    <dt>質問です。</dt>
-    <dd>答えが入ります。</dd>
-  </div>
-</dl>

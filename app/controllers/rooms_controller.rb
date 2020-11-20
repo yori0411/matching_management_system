@@ -4,13 +4,12 @@ class RoomsController < ApplicationController
   def show
     #@room = Room.find(params[:id])
     @texts = Text.where(room_id: @room.id)
+    @login_id = session[:login_id]
   end
 
   def create_text
     @room = Room.find(params[:id])
-    @text = Text.new(text: params[:message], room_id: @room.id)
-    logger.debug("=================")
-    logger.debug(@text.inspect)
+    @text = Text.new(text: params[:message], room_id: @room.id, user_id: session[:login_id])
     @text.save
     redirect_to @room
   end
