@@ -19,9 +19,17 @@
       <tr>
         <td><%= user.password %></td>
         <td><%= user.name %></td>
-        <td><%= user.gender %></td>
+        <% if user.gender == 0 %>
+          <td>女子</td>
+        <% else %>
+          <td>男子</td>
+        <% end %>
         <td><%= user.user_id %></td>
-        <td><%= user.authority %></td>
+        <% if user.authority == 0 %>
+          <td>生徒</td>
+        <% else %>
+          <td>先生</td>
+        <% end %>
         <td><%= link_to '詳細', user %></td>
         <td><%= link_to '編集', edit_user_path(user) %></td>
         <td><%= link_to '削除', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
