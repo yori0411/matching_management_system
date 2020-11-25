@@ -3,12 +3,9 @@
 <% @users.each do |user| %>
   <table style="width: calc(30% - 2px); margin: 0 10px; padding-left: 0; float: left;">
     <tr><th>名前</th><td><%= user.name %></td><tr>
-    <tr><th>画像</th>
-
-    <! <td><%= user.filename %></td> !>
-
-    <tr>
+    <tr><th>画像</th><td><%= user.filename %></td></tr>
+    <tr><th></th><td><%= link_to '詳細', user %></td></tr>
   </table>
 <% end %>
 
-  <p> <%= link_to '詳細','/details' %> </p>
+

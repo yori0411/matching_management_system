@@ -131,10 +131,19 @@ class UsersController < ApplicationController
   end
 
   def matching
-    @users = User.all
+    users = User.where.not(user_id: session[:login_id], authority: 1)
+    user1 = User.find_by(user_id: session[:login_id])
+    check_count = 4
+    @users = []
+    users.each do |user2|
+      if matching_check(user1, user2, check_count)
+        @users << user2 
+      end
+    end
   end
 
   def details
+#   @user = User.where("name='test'")
   end
 
   # DELETE /users/1
@@ -148,6 +157,53 @@ class UsersController < ApplicationController
   end
 
   private
+  #マッチング確認用メソッド
+#引数（3）：ログインユーザーデータ、相手ユーザー、マッチ条件数
+#マッチすればtrue、しなければfalseを返す。
+def matching_check(user1, user2, check_count)
+  count = 0
+  if user1.q1 == user2.q1
+      count += 1
+  end
+  if user1.q2 == user2.q2
+      count += 1
+  end
+  if user1.q3 == user2.q3
+      count += 1
+  end
+  if user1.q4 == user2.q4
+      count += 1
+  end
+  if user1.q5 == user2.q5
+      count += 1
+  end
+  if user1.q6 == user2.q6
+      count += 1
+  end
+  if user1.q7 == user2.q7
+      count += 1
+  end
+  if user1.q8 == user2.q8
+      count += 1
+  end
+  if user1.q9 == user2.q9
+      count += 1
+  end
+  if user1.q10 == user2.q10
+      count += 1
+  end
+  if user1.q11 == user2.q11
+      count += 1
+  end
+  if user1.q12 == user2.q12
+      count += 1
+  end
+  if count >= check_count
+      return true
+  else
+      return false
+  end
+end
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
