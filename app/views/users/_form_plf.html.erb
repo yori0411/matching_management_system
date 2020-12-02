@@ -18,6 +18,7 @@
 
   <div class="field">
    <%= form.label :性別 %>
+   <%= form.label :０→女，１→男 %>
    <%= form.number_field :gender, id: :user_gender %>
   </div>
 
@@ -27,62 +28,62 @@
   </div>
 
   <div class="field">
-    <%= form.label :Ｑ1，犬か猫どっち派？0が犬で1が猫です。 %>
+    <%= form.label :Ｑ1，犬か猫どっち派？0→犬，1→猫 %>
     <%= form.number_field :q1, id: :user_q1 %>
   </div>
 
   <div class="field">
-    <%= form.label :Ｑ2，人と仲良くなる時は一緒に騒ぎあうか語り合うかどっち派？0が騒ぎあうで1が語り合うです。 %>
+    <%= form.label :Ｑ2，人と仲良くなる時は一緒に騒ぎあうか語り合うかどっち派？0→騒ぎあう，1→語り合う %>
     <%= form.number_field :q2, id: :user_q2 %>
   </div>
 
   <div class="field">
-    <%= form.label :Ｑ3，遊びに行くなら？0が遊園地、1が夜景、2が家、3が夜景です。 %>
+    <%= form.label :Ｑ3，遊びに行くなら？0が遊園地、1→夜景、2→家、3→夜景 %>
     <%= form.number_field :q3, id: :user_q3 %>
   </div>
 
   <div class="field">
-    <%= form.label :Ｑ4，好きな音楽のジャンルは？0がケーポップ、1がジャニーズ、2が邦ロック、3がエルディーエイチ、4が洋楽です。 %>
+    <%= form.label :Ｑ4，好きな音楽のジャンルは？0→ケーポップ、1→ジャニーズ、2→邦ロック、3→エルディーエイチ、4→洋楽 %>
     <%= form.number_field :q4, id: :user_q4 %>
   </div>
 
   <div class="field">
-    <%= form.label :Ｑ5，金銭感覚どっち派？0がケチ、1が荒いです。 %>
+    <%= form.label :Ｑ5，金銭感覚どっち派？0→ケチ、1→荒いです。 %>
     <%= form.number_field :q5, id: :user_q5 %>
   </div>
 
   <div class="field">
-    <%= form.label :Ｑ6，あなたの時間の使い方は？0がせっかち、1がのんびりです。 %>
+    <%= form.label :Ｑ6，あなたの時間の使い方は？0→せっかち、1→のんびり %>
     <%= form.number_field :q6, id: :user_q6 %>
   </div>
 
   <div class="field">
-    <%= form.label :Ｑ7，あなたの決断力は？0が優柔不断、1がすぐに決断できるです。 %>
+    <%= form.label :Ｑ7，あなたの決断力は？0→優柔不断、1→すぐに決断できる %>
     <%= form.number_field :q7, id: :user_q7 %>
   </div>
 
   <div class="field">
-    <%= form.label :Ｑ8，ラーメンかうどんどっち派？0がラーメン、1がうどんです。 %>
+    <%= form.label :Ｑ8，ラーメンかうどんどっち派？0→ラーメン、1→うどん %>
     <%= form.number_field :q8, id: :user_q8 %>
   </div>
 
   <div class="field">
-    <%= form.label :Ｑ9，将来島根を出たい？0が出たくない、1が出たいです。 %>
+    <%= form.label :Ｑ9，将来島根を出たい？0→出たくない、1→出たい %>
     <%= form.number_field :q9, id: :user_q9 %>
   </div>
 
   <div class="field">
-    <%= form.label :Ｑ10，好きな季節は？0が春、1が夏、2が秋、3が冬です。 %>
+    <%= form.label :Ｑ10，好きな季節は？0→春、1→夏、2→秋、3→冬です。 %>
     <%= form.number_field :q10, id: :user_q10 %>
   </div>
 
   <div class="field">
-    <%= form.label :Ｑ11，好きなゲームは？0がシュミレーション、1がアクション、2がロールプレイング、3がパズル、4がレース、5がなしです。 %>
+    <%= form.label :Ｑ11，好きなゲームは？0→シュミレーション、1→アクション、2→ロールプレイング、3→パズル、4→レース、5→なし %>
     <%= form.number_field :q11, id: :user_q11 %>
   </div>
 
   <div class="field">
-    <%= form.label :Ｑ12，あなたの趣味は？0が読書、1がアニメ、2が映画、3がドラマ、4が音楽、5がスポーツ、6が料理、7が釣り、8がYoutube・ティックトック、9がゲーム、10が旅行です。 %>
+    <%= form.label :Ｑ12，あなたの趣味は？0→読書、1→アニメ、2→映画、3→ドラマ、4→音楽、5→スポーツ、6→料理、7→釣り、8→Youtube・ティックトック、9→ゲーム、10→旅行 %>
     <%= form.number_field :q12, id: :user_q12 %>
   </div>
   <%= hidden_field_tag :student_plf, true %>

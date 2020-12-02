@@ -53,7 +53,7 @@
  }
 
  body {
-    background:linear-gradient(90deg,#ffc0cb 0%,#ffc0cb 40%,#f0f8ff 40%,#f0f8ff 100%);
+    background:linear-gradient(90deg,#ffc0cb 0%,#ffc0cb 40%,#c0c0c0 40%,#c0c0c0 100%);
     /*background-color: #CCCCCC;*/
     top: 570px;
     left: 1030px;
@@ -63,5 +63,4 @@
    top: 100px;
    left: 1060px;
  }
-
 

@@ -24,12 +24,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show_plf
-    @user = User.find_by(password: "1234", name: "test", gender: 0, user_id: "bbbb", authority: 0)
+    @user = User.find_by(user_id: session[:login_id], authority: 0)
   end
 
   # GET /users/1/edit
   def edit_plf
-    @user = User.find_by(password: "1234", name: "test", gender: 0, user_id: "bbbb", authority: 0)
+    @user = User.find_by(user_id: session[:login_id], authority: 0)
   end
 
   # POST /users
