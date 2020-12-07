@@ -24,12 +24,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show_plf
-    @user = User.find_by(password: "1234", name: "test", gender: 0, user_id: "bbbb", authority: 0)
+    @user = User.find_by(user_id: session[:login_id])
   end
 
   # GET /users/1/edit
   def edit_plf
-    @user = User.find_by(password: "1234", name: "test", gender: 0, user_id: "bbbb", authority: 0)
+    @user = User.find_by(user_id: session[:login_id])
   end
 
   # POST /users
@@ -133,13 +133,22 @@ class UsersController < ApplicationController
   def matching
     users = User.where.not(user_id: session[:login_id], authority: 1)
     user1 = User.find_by(user_id: session[:login_id])
-    check_count = 4
+    check_count = 1
     @users = []
     users.each do |user2|
-      if matching_check(user1, user2, check_count)
+      if matching_check(user1, user2, check_count) && (Room.where(user_id1: user1.user_id, user_id2: user2.user_id).or(Room.where(user_id1: user2.user_id, user_id2: user1.user_id))).blank?
         @users << user2 
       end
     end
+  end
+
+  def add_friend
+    #友達追加処理（roomの作成）
+    @room = Room.new(user_id1: session[:login_id], user_id2: params[:user_id])
+    @room.save
+
+    #トップ画面へ
+    redirect_to root_path
   end
 
   def details

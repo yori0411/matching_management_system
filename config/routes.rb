@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   root 'home#top'
 
   post '/rooms/create_text' #, to: 'rooms#create'
-  resources :users
+  resources :users do
+    collection do
+      get 'add_friend'
+      get 'show_plf'
+    end
+  end
   namespace :auth do
     post 'add_session'
     delete 'logout'
