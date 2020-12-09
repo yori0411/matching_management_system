@@ -18,7 +18,11 @@
 
 <p>
   <strong>性別:</strong>
-  <%= @user.gender %>
+  <% if @user.gender == 0 %>
+    女性
+  <% else %>
+    男性
+  <% end %>
 </p>
 
 <p>

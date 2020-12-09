@@ -2,6 +2,7 @@ Rails.application.routes.draw do
  
   resources :rooms
  
+  mount ActionCable.server => '/cable'
 
   #get 'home/top'
   root 'home#top'
