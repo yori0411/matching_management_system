@@ -61,40 +61,26 @@
   <%= @user.q5 %>
 </p>
 
-<p>
-  <strong>Q6:</strong>
-  <%= @user.q6 %>
+  <% if @user.gender == 0 %>
+    女子
+  <% else %>
+    男子
+  <% end %>
 </p>
 
-<p>
-  <strong>Q7:</strong>
-  <%= @user.q7 %>
+  
+
+<p>  
+  <strong>名前:</strong>
+
+
+ <% if @user.authority == 0 %>
+    生徒
+ <% else %>
+    先生
+ <% end %>
 </p>
 
-<p>
-  <strong>Q8:</strong>
-  <%= @user.q8 %>
-</p>
-
-<p>
-  <strong>Q9:</strong>
-  <%= @user.q9 %>
-</p>
-
-<p>
-  <strong>Q10:</strong>
-  <%= @user.q10 %>
-</p>
-
-<p>
-  <strong>Q11:</strong>
-  <%= @user.q11 %>
-</p>
-
-<p>
-  <strong>Q12:</strong>
-  <%= @user.q12 %>
-</p>
 
 <%= link_to '編集', edit_user_path(@user) %> |
 <%= link_to '戻る', users_path %>
