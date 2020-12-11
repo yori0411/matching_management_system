@@ -17,7 +17,49 @@
 </p>
 
 <p>
-  <strong>名前:</strong>
+  <strong>性別:</strong>
+  <% if @user.gender == 0 %>
+    女性
+  <% else %>
+    男性
+  <% end %>
+</p>
+
+<p>
+  <strong>プロフィール画像:</strong>
+  <%= @user.filename %>
+</p>
+
+
+<p>
+  <strong>権限:</strong>
+  <%= @user.authority %>
+</p>
+
+<p>
+  <strong>Q1:</strong>
+  <%= @user.q1 %>
+</p>
+
+<p>
+  <strong>Q2:</strong>
+  <%= @user.q2 %>
+</p>
+
+<p>
+  <strong>Q3:</strong>
+  <%= @user.q3 %>
+</p>
+
+<p>
+  <strong>Q4:</strong>
+  <%= @user.q4 %>
+</p>
+
+<p>
+  <strong>Q5:</strong>
+  <%= @user.q5 %>
+</p>
 
   <% if @user.gender == 0 %>
     女子

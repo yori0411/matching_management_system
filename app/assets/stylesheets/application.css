@@ -21,6 +21,13 @@
     font-size: 40px ;
  }
 
+ .maru-box{
+    margin: 1em 0;
+    padding: 1em;
+    background-color: #fce4ec;
+    border-radius: 10px;
+  }
+
  /*プロフィール*/
  h2 {    position: relative;
     top: -170px;
@@ -52,8 +59,8 @@
     font-size: 40px ;
  }
 
- body {
-    background:linear-gradient(90deg,#ffc0cb 0%,#ffc0cb 40%,#c0c0c0 40%,#c0c0c0 100%);
+ .top {
+    background:linear-gradient(90deg,white 0%,white 40%,#c0c0c0 40%,#c0c0c0 100%);
     /*background-color: #CCCCCC;*/
     top: 570px;
     left: 1030px;
