@@ -8,7 +8,7 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    ActionCable.server.broadcast 'chat_channel', message: data['message']
+    ActionCable.server.broadcast('chat_channel', data)
     Message.create! text: data['message']
   end
 end
