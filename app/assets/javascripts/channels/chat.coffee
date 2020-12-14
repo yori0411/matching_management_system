@@ -1,0 +1,22 @@
+App.chat = App.cable.subscriptions.create "ChatChannel",
+  connected: ->
+    # Called when the subscription is ready for use on the server
+
+  disconnected: ->
+    # Called when the subscription has been terminated by the server
+
+  received: (data) ->
+    # Called when there's incoming data on the websocket for this channel
+    $('#messages_index').append('<li>' + data.message + '</li>')
+
+  speak: (message) ->
+    @perform 'speak', message: message
+    console.log("Hello World!02")
+
+  $(document).on 'keypress', '[data-behavior~=chat_speak]', (event) ->
+  console.log("aaaa")
+  if event.keyCode is 13
+    # コンソールで接続確認で使ったコード
+    App.chat.speak event.target.value
+    event.target.value = ''
+    event.preventDefault()
