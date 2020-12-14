@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show_plf
-    @user = User.find_by(user_id: session[:login_id])
+    @user = User.find_by(user_id: params[:user_id])
   end
 
   # GET /users/1/edit
@@ -133,7 +133,11 @@ class UsersController < ApplicationController
   def matching
     users = User.where.not(user_id: session[:login_id], authority: 1)
     user1 = User.find_by(user_id: session[:login_id])
-    check_count = 1
+    if params[:check_count].present?
+      check_count = params[:check_count].to_i
+    else
+      check_count = 0
+    end
     @users = []
     users.each do |user2|
       if matching_check(user1, user2, check_count) && (Room.where(user_id1: user1.user_id, user_id2: user2.user_id).or(Room.where(user_id1: user2.user_id, user_id2: user1.user_id))).blank?

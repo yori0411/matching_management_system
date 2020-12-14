@@ -39,14 +39,15 @@
 }
 
  /*＋マッチングのところ*/
- h4 {    position: relative;
+ .matching_button {    position: relative;
     top: 80px;
     left: 100px;
     font-size: 40px ;
  }
 
  /*プロフィール編集ボタン*/
- p {    position: relative;
+ .plf_button {
+    position: relative;
     top: -10px;
     left: 800px;
     font-size: 40px ;
@@ -59,9 +60,8 @@
     left: 1030px;
  }
 
- .a {    position: relative;
+ .a {
+   position: relative;
    top: 100px;
    left: 1060px;
  }
-
-
