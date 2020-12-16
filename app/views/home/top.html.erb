@@ -33,7 +33,7 @@
  <%= link_to '新規登録', new_room_path %>
  <%= link_to 'ログアウト', :auth_logout, method: :delete %>
 
- <h2>プロフィール</h2>
+ <h2 class="plf">プロフィール</h2>
 
  <h2 class="filename">
  <% if @user.filename.present? %>
@@ -42,12 +42,12 @@
  </h2>
 
  <h2 class="name">
+ 名前
    <%= @user.name %>
  </h2>
 
- <h4> <%= link_to '+マッチング','/matching' %> </h4>
+ <h4 class="matching_button"> <%= link_to '+マッチング','/matching' %> </h4>
 
- <p> <%= link_to 'プロフィール編集','/plf' %> </p>
+ <p class="plf_button"> <%= link_to 'プロフィール編集','/plf' %> </p>
 
 </body>
-
