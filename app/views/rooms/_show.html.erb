@@ -1,0 +1,9 @@
+<ul id = "messages_index">
+  <% message.each do |m| %>
+    <% if m.user_id == @login_id %>
+      <li class="mymessage"><%= m.text %></li>
+    <% else %>
+      <li class="youmessage"><%= m.text %></li>
+    <% end %>
+  <% end %>
+<ul>
