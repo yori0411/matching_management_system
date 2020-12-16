@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/plf' => 'users#edit_plf'
 
   get '/matching' => 'users#matching'
+  post '/matching' => 'users#matching'
 
   get '/details' => 'users#details'
 
