@@ -14,7 +14,17 @@
  *= require_self
  */
 
+<<<<<<< HEAD
 
+=======
+ /*友達一覧*/
+ h3 {    position: relative;
+    top: 10px;
+    left: 100px;
+    font-size: 40px ;
+    font-family: 'Sawarabi Mincho', sans-serif;
+ }
+>>>>>>> 8ac2cc9bd3d239aa5aec247cd8c182c239eade1d
 
  .maru-box{    position: absolute;
    top: -5px;
