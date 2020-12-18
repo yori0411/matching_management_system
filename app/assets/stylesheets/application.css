@@ -14,14 +14,12 @@
  *= require_self
  */
 
- /*友達一覧*/
- h3 {    position: relative;
-    top: 10px;
-    left: 100px;
-    font-size: 40px ;
- }
+
 
  .maru-box{    position: absolute;
+   top: -5px;
+   left: 210px;
+   font-size: 15px;
     margin: 1em 0;
     padding: 1em;
     background-color: #fce4ec;
