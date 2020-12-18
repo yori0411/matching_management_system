@@ -1,18 +1,15 @@
 <h1>チャット</h1>
 
-<ul id = "messages_index">
-  <% @texts.each do |message| %>
-    <% if message.user_id == @login_id %>
-      <li class="mymessage"><%= message.text %></li>
-    <% else %>
-      <li class="youmessage"><%= message.text %></li>
-    <% end %>
-  <% end %>
-<ul>
+<div class="text_message">
+<%= render 'show', message: @texts %>
+</div>
+<div id="append_messages"></div>
 
 <%= form_tag("/rooms/create_text") do %>
-    <input id="chat-form" type="text" data-behavior="chat_speak" name="message">
+    <input id="chat-form" type="text" data-behavior="chat_speak" name="text">
     <%= hidden_field_tag :id, @room.id %>
+    <input type="hidden" id="current_room_id" value="<%= @room.id %>">
+    <input type="hidden" id="current_user_id" value="<%= @login_id %>">
 <% end %>
 
 <br>
