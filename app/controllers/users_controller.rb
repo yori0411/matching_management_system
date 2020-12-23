@@ -162,6 +162,10 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    @rooms = Room.where(user_id1: @user.user_id).or(Room.where(user_id2: @user.user_id))
+    #logger.debug("===================")
+    #logger.debug(@rooms.inspect)
+    @rooms.destroy_all
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }

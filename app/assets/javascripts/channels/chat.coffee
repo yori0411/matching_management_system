@@ -12,9 +12,9 @@ App.chat = App.cable.subscriptions.create "ChatChannel",
     #$('.text_message').html data['message']
 
     if data['user'] is $('#current_user_id').val()
-      $('#append_messages').append '<div style="text-align: right">' + data['message'] + '</div>'
+      $('#append_messages').append '<li class="mymessage">' + data['message'] + '</li>'
     else
-      $('#append_messages').append '<div style="text-align: left">' + data['message'] + '</div>'
+      $('#append_messages').append '<li class="youmessage">' + data['message'] + '</li>'
 
   
   speak: (message, room_id, user_id) ->
