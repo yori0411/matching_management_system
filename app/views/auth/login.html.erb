@@ -1,22 +1,25 @@
+<h1 class="logo"><%= image_tag "mms.png" %></h1>
+
 <p id="notice"><%= notice %></p>
-<% @title = 'ログイン画面' %>
+<% @title = 'ログイン' %>
 
 <div id='login-form'>
   <h1><%= @title %></h1>
 
-  <%= form_for @form, url: :auth_add_session do |f| %>
+ <%= form_for @form, url: :auth_add_session do |f| %>
     <div>
-      <%= f.label :user_id, 'ログインID' %>
-      <%= f.text_field :user_id %>
-    </div>
-    <div>
+     <%= f.label :user_id, 'ログインID' %>
+     <%= f.text_field :user_id %>
+   </div>
+   <div>
       <%= f.label :password, 'パスワード' %>
       <%= f.password_field :password %>
-    </div>
+   </div>
     <div>
       <%= f.submit 'ログイン' %>
     </div>
-  <% end %>
+ <% end %>
 </div>
 
-<left><%= image_tag "マッチング.jpg", :width => "400", :height => "250" %></left>
+
+<center><%= image_tag "マッチング.jpg", :width => "400", :height => "250" %></center>

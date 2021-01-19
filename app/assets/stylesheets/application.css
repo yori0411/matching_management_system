@@ -14,61 +14,180 @@
  *= require_self
  */
 
-<<<<<<< HEAD
-
-=======
- /*友達一覧*/
- h3 {    position: relative;
-    top: 10px;
-    left: 100px;
-    font-size: 40px ;
-    font-family: 'Sawarabi Mincho', sans-serif;
+ /*題名*/
+ .head {
+  font-size: 3rem;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: .1em;
+  color: #fff;
+  text-shadow: -3px 2px 0 #000;
+  margin-left: 200px;
  }
->>>>>>> 8ac2cc9bd3d239aa5aec247cd8c182c239eade1d
 
- .maru-box{    position: absolute;
-   top: -5px;
-   left: 210px;
-   font-size: 15px;
-    margin: 1em 0;
-    padding: 1em;
-    background-color: #fce4ec;
-    border-radius: 10px;
+ .background-top{
+   background-color :white;
+ }
+
+
+ /*友達一覧*/
+ .maru-box {    position: relative;
+    font-size: 35px ;
+    font-family: 'Quicksand', sans-serif;
+    height: 50px;
+    width: 180px;
+    margin-right: 100px;
+    padding: 1.5rem 2rem 0 2rem;
+    word-break: break-all;
+    color: #fff;
+    background: #000;
   }
+
+ .maru-box:after {
+    position: absolute;
+    top: 0;
+    right: -55px;
+    height: 0;
+    height: 0;
+    content: '';
+    border-width: 75px 55px 0 0;
+    border-style: solid;
+    border-color: rgb(158, 1, 87) transparent transparent transparent;
+ }
+  
 
  /*プロフィール*/
  .plf {    position: absolute;
-    top: 100px;
-    left: 920px;
-    font-size: 40px ;
+    top: 230px;
+    left: 820px;
+    font-size: 35px ;
+    font-family: 'Quicksand', sans-serif;
+    padding: 1rem 2rem;
+    border-left: 5px dotted #000;
+    background: #f4f4f4;
  }
 
  .filename {    position: absolute;
-    top: 180px;
-    left: 890px;
-}
+    top: 310px;
+    left: 970px;
+ }
 
-.name {    position: absolute;
-    top: 550px;
+ .name {    position: absolute;
+    top: 600px;
     left: 1020px;
 }
 
+ .friend {
+   font-size: 30px;
+ }
+
+ .tyatto {
+   margin-left: 100px;
+   font-size: 20px;
+
+   -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+   -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+   -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+   -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+   transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+   display: block;
+   margin-left: 100px; 
+   max-width: 50px;
+   text-decoration: none;
+   border-radius: 4px;
+   padding: 20px 30px;
+  
+   color: white;
+   box-shadow: rgb(255, 252, 254) 0 0px 0px 2px inset;
+ }
+
+ .tyatto:hover {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+}
+
+
  /*＋マッチングのところ*/
  .matching_button {    position: absolute;
-    top: 610px;
-    left: 100px;
+    top: 660px;
     font-size: 40px ;
+
+    -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    display: block;
+    margin: 20px auto;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 20px 30px;
+    
+    color: white;
+    box-shadow: rgb(255, 252, 254) 0 0px 0px 2px inset;
+
+
  }
+ .matching_button:hover {
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+ }
+
+
 
  /*プロフィール編集ボタン*/
  .plf_button {    position: absolute;
-    top: 620px;
+    top: 660px;
     left: 900px;
     font-size: 40px ;
+
+    -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    display: block;
+    margin: 20px auto;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 20px 30px;
+
+    color: white;
+    box-shadow: rgb(255, 252, 254) 0 0px 0px 2px inset;
+
  }
 
+ .plf_button:hover {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+}
+
+ .logout {
+   font-size: 30px;
+
+   -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+   -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+   -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+   -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+   transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+   display: block;
+   margin: 216px auto;
+   max-width: 110px;
+   text-decoration: none;
+   border-radius: 4px;
+   padding: 20px 30px;
+
+   color: white;
+   box-shadow: rgb(255, 252, 254) 0 0px 0px 2px inset;
+
+ }
+
+ .logout:hover {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+}
+
  .top {
-    background:linear-gradient(90deg,white 0%,white 40%,#c0c0c0 40%,#c0c0c0 100%);
+    background:linear-gradient(90deg,#ffc1e7 0%,#f0a7fa 60%, #e2e2e2 60%,#e2e2e2 100%);
     /*background-color: #CCCCCC;*/
     top: 570px;
     left: 1030px;
@@ -79,3 +198,4 @@
    top: 100px;
    left: 1060px;
  }
+
