@@ -1,17 +1,20 @@
-<h1>チャット</h1>
-
+<div class="navi">
+    <%= link_to '<', root_path %>
+    <%= @friend_name %> 
+</div>
 <div class="text_message">
 <%= render 'show', message: @texts %>
 </div>
 
 <%= form_tag("/rooms/create_text") do %>
-    <input id="chat-form" type="text" data-behavior="chat_speak" name="text">
     <%= hidden_field_tag :id, @room.id %>
     <input type="hidden" id="current_room_id" value="<%= @room.id %>">
     <input type="hidden" id="current_user_id" value="<%= @login_id %>">
+    <div class="text_form">
+        <input id="chat-form" type="text" data-behavior="chat_speak" name="text">
+    </div>
 <% end %>
 
 <br>
-<%= link_to '戻る', root_path %>
 
 
