@@ -86,8 +86,21 @@
     <%= form.label :Ｑ12，あなたの趣味は？0→読書、1→アニメ、2→映画、3→ドラマ、4→音楽、5→スポーツ、6→料理、7→釣り、8→Youtube・ティックトック、9→ゲーム、10→旅行 %>
     <%= form.number_field :q12, id: :user_q12 %>
   </div>
+
+  <%= text_field_tag "status-message", "一言", {size:"100"}  %>
+
   <%= hidden_field_tag :student_plf, true %>
   <div class="actions">
     <%= form.submit %>
   </div>
+<% end %>
+
+<% if @user.errors.any? %>
+<div id="error_explanation" class="alert alert-danger">
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>

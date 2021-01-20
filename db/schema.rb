@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201104030544) do
+ActiveRecord::Schema.define(version: 20201223012433) do
 
   create_table "administrators", force: :cascade do |t|
-    t.string "email"
+    t.string "user_id"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20201104030544) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password"
+    t.string "memo"
   end
 
 end
