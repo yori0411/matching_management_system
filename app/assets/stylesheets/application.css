@@ -98,6 +98,7 @@
   
    color: white;
    box-shadow: rgb(255, 252, 254) 0 0px 0px 2px inset;
+   float: left;
  }
 
  .tyatto:hover {

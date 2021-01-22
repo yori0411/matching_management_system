@@ -2,9 +2,17 @@ class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
   def show
-    #@room = Room.find(params[:id])
+    @room = Room.find(params[:id])
     @texts = Text.where(room_id: @room.id)
     @login_id = session[:login_id]
+    if @room.user_id1 == @login_id
+      @friend_name = User.find_by(user_id: @room.user_id2).name
+    else 
+      @friend_name = User.find_by(user_id: @room.user_id1).name
+    end
+
+    render :layout => 'chat.html.1.erb'
+
   end
 
   def create_text
@@ -16,6 +24,7 @@ class RoomsController < ApplicationController
 
   def index
     @rooms = Room.where(user_id1: session[:login_id]).or(Room.where(user_id2: session[:login_id]))
+
   end
 
   def new
