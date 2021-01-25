@@ -1,16 +1,14 @@
-<div class="demo demo4">
-  <div class="heading">マッチングした人一覧</div>
-</div>
+<body class="mach">
+  <h1 class="pl">マッチングした人一覧
 
-<div class="colored"></div>
-
-<%= form_tag('/matching') do %>
-  <p>
-  質問マッチ数
-  <br>
-  <%= text_field_tag 'check_count' %><%= submit_tag '検索' %>
-  </p>
-  <% end %>
+    <%= form_tag('/matching') do %>
+      <p>
+        質問マッチ数
+        <br>
+        <%= text_field_tag 'check_count' %><%= submit_tag '検索' %>
+      </p>
+    <% end %>
+  </h1>
 
 <% @users.each do |user| %>
   <table style="width: calc(30% - 2px); margin: 0 10px; padding-left: 0; float: left;">
