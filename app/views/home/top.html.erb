@@ -1,13 +1,18 @@
 <body class="top">
+ 
+    <h1 class="logo"><%= image_tag "mms.png" %></h1>
 
- <h3 class="maru-box">友達一覧</h3>
+  
+ <h3 class="plf"><span>My Profile</span></h3>
 
  <p id="notice"><%= notice %></p>
 
- <table>
-   <thead>
-     <tr>
-       <th>相手の名前</th>
+
+
+ <br>
+
+       <th> <h3 class="maru-box">Friends</h3>
+       </th>
        <th colspan="3"></th>
      </tr>
    </thead>
@@ -15,11 +20,10 @@
    <tbody>
      <% @rooms.each_with_index do |room, index| %>
        <tr>
-         
-         <td><%= @user_list[index] %></td>
-         <td><%= link_to 'チャット', room_path(room) %></td>
-         <td><%= link_to '編集', edit_room_path(room) %></td>
-         <td><%= link_to '削除', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <div class="friend"><td><%= @user_list[index] %></td></div>
+         <div class="tyatto"><td><%= link_to 'Talk', room_path(room) %></td></div>
+         <div class="tyatto"><td><%= link_to '削除', room, method: :delete, data: { confirm: 'Are you sure?' } %></td></div>
+
        </tr>
      <% end %>
    </tbody>
@@ -27,14 +31,12 @@
 
  <br>
 
- <%= link_to 'ログアウト', :auth_logout, method: :delete %>
 
- <h2 class="plf">プロフィール</h2>
 
  <h2 class="filename">
- <% if @user.filename.present? %>
-   <%= image_tag @user.filename, :width => "300px"%>
- <% end %>
+  <% if @user.filename.present? %>
+    <%= image_tag @user.filename, :width => "300px"%>
+  <% end %>
  </h2>
 
  <h2 class="name">
@@ -42,8 +44,16 @@
    <%= @user.name %>
  </h2>
 
- <h4 class="matching_button"> <%= link_to '+マッチング','/matching' %> </h4>
+ <div>
+   <a href="/matching" class="matching_button">＋Matching!💗</a>
+   <a href="/login" class="logout">Logout</a>
+ </div> 
+ 
 
- <p class="plf_button"> <%= link_to 'プロフィール編集','/plf' %> </p>
+
+ <div>
+   <a href="/plf" class="plf_button">プロフィール編集</a>
+ </div>
+
 
 </body>

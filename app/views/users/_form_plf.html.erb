@@ -87,7 +87,9 @@
     <%= form.number_field :q12, id: :user_q12 %>
   </div>
 
-  <%= text_field_tag "status-message", "一言", {size:"100"}  %>
+  <div class="field">
+    <%= form.label :一言コメント %>
+  <%= form.text_field :memo, {id: :user_memo,size:"100"}%>
 
   <%= hidden_field_tag :student_plf, true %>
   <div class="actions">

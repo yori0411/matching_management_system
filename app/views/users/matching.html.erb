@@ -2,6 +2,8 @@
   <div class="heading">マッチングした人一覧</div>
 </div>
 
+<div class="colored"></div>
+
 <%= form_tag('/matching') do %>
   <p>
   質問マッチ数
@@ -13,8 +15,12 @@
 <% @users.each do |user| %>
   <table style="width: calc(30% - 2px); margin: 0 10px; padding-left: 0; float: left;">
     <tr><th>名前</th><td><%= user.name %></td><tr>
-    <tr><th>画像</th><td><%= user.filename %></td>
-    
+    <tr><th>画像</th><td>
+    <% if user.filename.present? %>
+    <%= image_tag user.filename %>
+  <% end %>
+  </td>
+
     <tr><th></th><td><%= link_to '詳細', show_plf_users_path(user_id: user.user_id) %></td></tr>
     <tr><th></th><td><%= link_to '友達追加', add_friend_users_path(user_id: user.user_id) %></td></tr>
   </table>
