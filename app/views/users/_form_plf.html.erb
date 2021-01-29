@@ -106,17 +106,18 @@
   <%= form.text_field :memo, {id: :user_memo,size:"100"}%>
 
   <%= hidden_field_tag :student_plf, true %>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
 
-<% if @user.errors.any? %>
-<div id="error_explanation" class="alert alert-danger">
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</body>
