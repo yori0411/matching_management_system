@@ -4,8 +4,8 @@ Rails.application.routes.draw do
  
   mount ActionCable.server => '/cable'
 
-  #get 'home/top'
-  root 'home#top'
+  get 'home/top'
+  root 'auth#login'
 
   post '/rooms/create_text' #, to: 'rooms#create'
   resources :users do
