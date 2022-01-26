@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :gender, presence: true
-  validates :filename, presence: true
+  #validates :filename, presence: true
   validates :q1, presence: true
   validates :q2, presence: true
   validates :q3, presence: true
